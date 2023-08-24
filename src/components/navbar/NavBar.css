@@ -1,0 +1,10 @@
+header .navbar .navbar-brand img {
+    height: 100px;
+    width: auto;
+    max-width: 100%;
+}
+
+
+h1 {
+    color: #ffffff; /* Color blanco */
+}
