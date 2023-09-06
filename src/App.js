@@ -16,9 +16,8 @@ const App = () => {
     <Router>
       <div className="App">
         <NavBar />
-        <ItemListContainer />  {/* Añade esta línea aquí */}
         <Routes>
-          <Route path="/" element={<Inicio />} />
+          <Route path="/" element={<><Inicio /><ItemListContainer /></>} />
           <Route path="/control" element={<Control />} />
           <Route path="/hibridos" element={<Hibridos />} />
           <Route path="/speed" element={<Speed />} />
