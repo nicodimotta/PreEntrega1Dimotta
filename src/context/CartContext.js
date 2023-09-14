@@ -9,8 +9,14 @@ export const CartProvider = ({ children }) => {
         setCart([...cart, product]);
     };
 
+    // Aquí añadimos la función getTotalItems
+    const getTotalItems = () => {
+        return cart.length;
+    };
+
+    // Asegúrate de incluir getTotalItems en el valor del Provider
     return (
-        <CartContext.Provider value={{ cart, addToCart }}>
+        <CartContext.Provider value={{ cart, addToCart, getTotalItems }}>
             {children}
         </CartContext.Provider>
     );
@@ -23,3 +29,4 @@ export const useCart = () => {
     }
     return context;
 };
+

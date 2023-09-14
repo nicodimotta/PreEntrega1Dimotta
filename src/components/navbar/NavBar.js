@@ -2,8 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import CartWidget from '../cartwidget/CartWidget.js';
 import './NavBar.css';
+import { useCart } from '../../context/CartContext';
+
+
+
 
 const NavBar = () => {
+    const { getTotalItems } = useCart(); 
+
     return (
         <header>
             <nav className="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
@@ -12,7 +18,6 @@ const NavBar = () => {
                         <img src="/images/nav3.jpg" alt="Logo Mousepad" />
                     </Link>
                     <h1>MousePadStore</h1>
-                    {/* Puedes mantener el botón de navbar-toggler para efectos visuales */}
                     <div className="navbar-links">
                         <ul className="navbar-nav text-center gap-lg-5">
                             <li className="nav-item">
@@ -30,9 +35,14 @@ const NavBar = () => {
                             <li className="nav-item">
                                 <Link className="nav-link" to="/contacto">Contacto</Link>
                             </li>
+                            <li className="nav-item"> 
+                                <Link to="/carrito" className="nav-link">
+                                    <CartWidget />
+                                    ({getTotalItems()})
+                                </Link>
+                            </li>
                         </ul>
                     </div>
-                    <CartWidget /> {/* Aquí es donde agregamos el componente CartWidget */}
                 </div>
             </nav>
         </header>

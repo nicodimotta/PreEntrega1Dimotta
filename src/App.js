@@ -5,6 +5,7 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer.
 import ItemDetail from './components/ItemDetail/ItemDetail';
 import products from './data/products'; 
 import { CartProvider } from './context/CartContext';
+import Cart from './components/Cart/Cart';
 import './App.css';
 
 const Inicio = () => <div>Inicio</div>;
@@ -27,13 +28,15 @@ const App = () => {
         <div className="App">
           <NavBar />
           <Routes>
-            <Route path="/" element={<Inicio />} />
-            <Route path="/control" element={<ItemListContainer category="control" />} />
-            <Route path="/hibridos" element={<ItemListContainer category="hibridos" />} />
-            <Route path="/speed" element={<ItemListContainer category="speed" />} />
-            <Route path="/contacto" element={<Contacto />} />
-            <Route path="/producto/:productId" element={<ProductDetail />} />
-          </Routes>
+    <Route path="/" element={<Inicio />} />
+    <Route path="/control" element={<ItemListContainer category="control" />} />
+    <Route path="/hibridos" element={<ItemListContainer category="hibridos" />} />
+    <Route path="/speed" element={<ItemListContainer category="speed" />} />
+    <Route path="/contacto" element={<Contacto />} />
+    <Route path="/producto/:productId" element={<ProductDetail />} />
+    <Route path="/carrito" element={<Cart />} /> {/* Aquí añadimos la ruta del carrito */}
+</Routes>
+
         </div>
       </Router>
     </CartProvider>
